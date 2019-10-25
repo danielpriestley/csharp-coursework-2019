@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="624" Width="899">
 	<Grid Background="#FFFCFCFC" Margin="0,0,2,0" Height="592" VerticalAlignment="Top">
-		<Button x:Name="btnValidate" Content="Validate" HorizontalAlignment="Left" Margin="606,471,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF3C3C3C" Background="#FF3C3C3C" Foreground="White" Height="30"/>
+		<Button x:Name="btnValidate" Content="Validate" HorizontalAlignment="Left" Margin="606,471,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF3C3C3C" Background="#FF3C3C3C" Foreground="White" Height="30" Click="BtnValidate_Click"/>
 		<Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="457,471,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#DD2E2E2E" Background="White" Height="30" Click="BtnClear_Click"/>
 		<Label Content="First Name" HorizontalAlignment="Left" Margin="452,91,0,0" VerticalAlignment="Top" Height="29" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="457,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>

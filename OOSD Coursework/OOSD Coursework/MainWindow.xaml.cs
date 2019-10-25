@@ -49,6 +49,86 @@ namespace OOSD_Coursework
 			listOrigin.Visibility = Visibility.Visible;
 		}
 
-		
+		private bool validate()
+		{
+			bool validName;
+			bool validAge;
+			bool validCourse;
+			bool validAddress;
+			bool validCity;
+			bool validPostcode;
+			bool validEmail;
+			bool validInter;
+
+			// NAME VALIDATION
+			if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtSurname.Text))
+			{
+				Console.WriteLine("wtf man");
+				validName = false;
+			}
+
+			// AGE VALIDATION
+			// ensure that txtAge field is not empty
+			if (string.IsNullOrWhiteSpace(txtAge.Text))
+			{
+				Console.WriteLine("Age field is empty");
+			}
+			else
+			{
+				// converts age text input to integer to be able zto validate the range
+				int age = Convert.ToInt32(txtAge.Text);
+
+				// determine if age is within specified range
+				if (age < 16 || age > 101)
+				{
+					Console.WriteLine("wtf come on bro");
+					validAge = false;
+				}
+			}
+
+			// COURSE VALIDATION
+			if (listCourse.SelectedIndex < 0)
+			{
+				Console.WriteLine("you need to pick a course you clown");
+				validCourse = false;
+			}
+
+			// ADDRESS VALIDATION
+			if (string.IsNullOrWhiteSpace(txtAddress1.Text))
+			{
+				Console.WriteLine("Address Line 1 is empty");
+				validAddress = false;
+			}
+
+			// CITY VALIDATION
+			if (string.IsNullOrWhiteSpace(txtCity.Text))
+			{
+				Console.WriteLine("City is empty");
+				validCity = false; 
+			}
+
+			// POSTCODE VALIDATION
+			if (string.IsNullOrWhiteSpace(txtPostcode.Text))
+			{
+				Console.WriteLine("Postcode is empty");
+				validPostcode = false;
+			}
+
+			// EMAIL VALIDATION
+			if (string.IsNullOrWhiteSpace(txtEmail.Text))
+			{
+				Console.WriteLine("Email field is empty");
+				validEmail = false;
+			}
+
+
+			return false;
+
+		}
+
+		private void BtnValidate_Click(object sender, RoutedEventArgs e)
+		{
+			validate();
+		}
 	}
 }
