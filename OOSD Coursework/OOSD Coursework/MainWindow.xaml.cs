@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -115,12 +116,24 @@ namespace OOSD_Coursework
 			}
 
 			// EMAIL VALIDATION
+
+			// ensure email field is not empty
 			if (string.IsNullOrWhiteSpace(txtEmail.Text))
 			{
 				Console.WriteLine("Email field is empty");
 				validEmail = false;
 			}
 
+			// check if email meets the required format, contains @ & begins and ends with 0-9/A-Z/a-z
+			// regex declaration to test email format
+			Regex rg = new Regex(@"^([A-Z0-9].*)@(.*)$", RegexOptions.IgnoreCase);
+
+			// test if email meets regex 
+			if (rg.IsMatch(txtEmail.Text) == false)
+			{
+				Console.WriteLine("Email format is not correct");
+				validEmail = false;
+			}
 
 			return false;
 
@@ -130,5 +143,7 @@ namespace OOSD_Coursework
 		{
 			validate();
 		}
+
+		
 	}
 }
