@@ -9,21 +9,21 @@
 	<Grid Background="#FFFCFCFC" Margin="0,0,2,0" Height="592" VerticalAlignment="Top">
 		<Button x:Name="btnValidate" Content="Validate" HorizontalAlignment="Left" Margin="606,471,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF3C3C3C" Background="#FF3C3C3C" Foreground="White" Height="30" Click="BtnValidate_Click"/>
 		<Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="457,471,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#DD2E2E2E" Background="White" Height="30" Click="BtnClear_Click"/>
-		<Label Content="First Name" HorizontalAlignment="Left" Margin="452,91,0,0" VerticalAlignment="Top" Height="29" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="452,91,0,0" VerticalAlignment="Top" Height="29" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="457,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
-		<Label Content="Surname" HorizontalAlignment="Left" Margin="630,91,0,0" VerticalAlignment="Top" Height="29" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblSurname" Content="Surname" HorizontalAlignment="Left" Margin="630,91,0,0" VerticalAlignment="Top" Height="29" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="635,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
-		<Label Content="Email" HorizontalAlignment="Left" Margin="452,145,0,0" VerticalAlignment="Top" Height="25" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="452,145,0,0" VerticalAlignment="Top" Height="25" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="457,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
-		<Label Content="Age" HorizontalAlignment="Left" Margin="630,145,0,0" VerticalAlignment="Top" Height="25" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="630,145,0,0" VerticalAlignment="Top" Height="25" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="635,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" BorderBrush="#DDDDDDDD"/>
-		<Label Content="Address Line 1" HorizontalAlignment="Left" Margin="452,200,0,0" VerticalAlignment="Top" Height="22" Width="88" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblAddress" Content="Address Line 1" HorizontalAlignment="Left" Margin="452,200,0,0" VerticalAlignment="Top" Height="22" Width="88" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtAddress1" HorizontalAlignment="Left" Height="22" Margin="457,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
 		<Label Content="Address Line 2" HorizontalAlignment="Left" Margin="630,200,0,0" VerticalAlignment="Top" Height="22" Width="92" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtAddress2" HorizontalAlignment="Left" Height="22" Margin="635,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
-		<Label Content="City" HorizontalAlignment="Left" Margin="452,255,0,0" VerticalAlignment="Top" Height="28" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblCity" Content="City" HorizontalAlignment="Left" Margin="452,255,0,0" VerticalAlignment="Top" Height="28" Width="76" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="22" Margin="457,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" BorderBrush="#DDDDDDDD"/>
-		<Label Content="Postcode" HorizontalAlignment="Left" Margin="630,255,0,0" VerticalAlignment="Top" Height="22" Width="86" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblPostcode" Content="Postcode" HorizontalAlignment="Left" Margin="630,255,0,0" VerticalAlignment="Top" Height="22" Width="86" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="22" Margin="635,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" BorderBrush="#DDDDDDDD"/>
 		<Label Content="Are you an international student?" HorizontalAlignment="Left" Margin="452,320,0,0" VerticalAlignment="Top" Height="26" Width="181" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<RadioButton x:Name="interYes" Content="Yes" HorizontalAlignment="Left" Margin="457,351,0,0" VerticalAlignment="Top" Checked="InterYes_Checked" />
@@ -35,7 +35,7 @@
 			<ListBoxItem Content="Maths"/>
 			<ListBoxItem Content="Art"/>
 		</ComboBox>
-		<Label Content="Course Name" HorizontalAlignment="Left" Margin="452,383,0,0" VerticalAlignment="Top" Height="26" Width="181" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
+		<Label x:Name="lblCourse" Content="Course Name" HorizontalAlignment="Left" Margin="452,383,0,0" VerticalAlignment="Top" Height="26" Width="181" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<Label Content="Student Records System" HorizontalAlignment="Left" Margin="79,60,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light"/>
 
 	</Grid>
