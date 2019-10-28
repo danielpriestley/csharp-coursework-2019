@@ -42,9 +42,13 @@ namespace OOSD_Coursework
 			txtAddress2.Text = String.Empty;
 			txtCity.Text = String.Empty;
 			txtPostcode.Text = String.Empty;
-		    interNo.IsChecked=true;
+            listCourse.SelectedIndex = -1;
+            listOrigin.SelectedIndex = -1;
+            interNo.IsChecked=true;
 			lblOrigin.Visibility = Visibility.Collapsed;
 			listOrigin.Visibility = Visibility.Collapsed;
+
+            // returns all labels foreground colour to black on clear
             lblAge.Foreground = new SolidColorBrush(Colors.Black);
             lblFirstName.Foreground = new SolidColorBrush(Colors.Black);
             lblSurname.Foreground = new SolidColorBrush(Colors.Black);
@@ -68,28 +72,30 @@ namespace OOSD_Coursework
 			listOrigin.Visibility = Visibility.Visible;
 		}
 
-		private bool validate()
+       
+
+        private void validate()
 		{
 			
-
+            // declaration of invalidation count which will be used to test the validity of fields
             int invalidationCount = 0;
 
 			// NAME VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblFirstName.Foreground = new SolidColorBrush(Colors.Black);
+                lblSurname.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (string.IsNullOrWhiteSpace(txtFirstName.Text) || string.IsNullOrWhiteSpace(txtSurname.Text))
                 {
                     Console.WriteLine("The name field is empty");
                     // Sets field label to red if input is invalid
                     lblFirstName.Foreground = new SolidColorBrush(Colors.Red);
                     lblSurname.Foreground = new SolidColorBrush(Colors.Red);
-
-
                     invalidationCount++;
-                } else {
-                    lblFirstName.Foreground = new SolidColorBrush(Colors.Black);
-                    lblSurname.Foreground = new SolidColorBrush(Colors.Black);
-                }
+                } 
             } catch (Exception e){
                 Console.WriteLine("{0} Exception caught.", e);
                 invalidationCount++;
@@ -100,6 +106,10 @@ namespace OOSD_Coursework
 			// ensure that txtAge field is not empty
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblAge.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (string.IsNullOrWhiteSpace(txtAge.Text))
                 {
                     Console.WriteLine("Age field is empty");
@@ -134,9 +144,13 @@ namespace OOSD_Coursework
             // COURSE VALIDATION
             try
             {
-                if (listCourse.SelectedIndex < 0)
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+               lblCourse.Foreground = new SolidColorBrush(Colors.Black);
+
+                if (listCourse.SelectedIndex == -1)
                 {
-                    Console.WriteLine("you need to pick a course you clown");
+                    Console.WriteLine("A course must be selected.");
                     // Sets field label to red if input is invalid
                     lblCourse.Foreground = new SolidColorBrush(Colors.Red);
                     invalidationCount++;
@@ -145,6 +159,8 @@ namespace OOSD_Coursework
             catch (Exception e)
             {
                 Console.WriteLine("{0} Exception caught.", e);
+                lblCourse.Foreground = new SolidColorBrush(Colors.Red);
+
                 invalidationCount++;
             }
             
@@ -152,6 +168,10 @@ namespace OOSD_Coursework
             // ADDRESS VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblAddress.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (string.IsNullOrWhiteSpace(txtAddress1.Text))
                 {
                     Console.WriteLine("Address Line 1 is empty");
@@ -170,6 +190,10 @@ namespace OOSD_Coursework
             // CITY VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblCity.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (string.IsNullOrWhiteSpace(txtCity.Text))
                 {
                     Console.WriteLine("City is empty");
@@ -188,6 +212,10 @@ namespace OOSD_Coursework
             // POSTCODE VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblPostcode.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (string.IsNullOrWhiteSpace(txtPostcode.Text))
                 {
                     Console.WriteLine("Postcode is empty");
@@ -207,6 +235,10 @@ namespace OOSD_Coursework
             // EMAIL VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblEmail.Foreground = new SolidColorBrush(Colors.Black);
+
                 // ensure email field is not empty
                 if (string.IsNullOrWhiteSpace(txtEmail.Text))
                 {
@@ -224,6 +256,8 @@ namespace OOSD_Coursework
                 if (rg.IsMatch(txtEmail.Text) == false)
                 {
                     Console.WriteLine("Email format is not correct");
+                    lblEmail.Foreground = new SolidColorBrush(Colors.Red);
+
                     invalidationCount++;
                 }
             }
@@ -236,6 +270,10 @@ namespace OOSD_Coursework
             // INTERNATIONAL STUDENT VALIDATION
             try
             {
+                // this line ensures that if input is changed and then re-validated, it will return back to its default
+                // foreground colour, reducing confusion over what fields are still invalid if applicable
+                lblOrigin.Foreground = new SolidColorBrush(Colors.Black);
+
                 if (interYes.IsChecked == true && listOrigin.SelectedIndex < 0)
                 {
                     Console.WriteLine("You need to select a country of origin as an international student");
@@ -260,14 +298,10 @@ namespace OOSD_Coursework
             } else
             {
                 Console.WriteLine("Did not pass validation");
-                MessageBox.Show("Information was invalid Please correct highlighted fields", "Invalid Input");
+                MessageBox.Show("Information was invalid" + Environment.NewLine + "Please correct highlighted fields", "Invalid Input");
             }
 
-            
-
-
-			return false;
-
+      
 		}
 
 		private void BtnValidate_Click(object sender, RoutedEventArgs e)
@@ -275,13 +309,12 @@ namespace OOSD_Coursework
 			validate();
 		}
 
-        public string GetTxtData()
+        public void GetTxtData()
         {
             // loads each line of the countries file and adds them to combobox
             listOrigin.ItemsSource = File.ReadAllLines(@"C:\Users\40430241\source\repos\csharp-coursework-2019\OOSD Coursework\OOSD Coursework\countries.txt");
-            return "zzz";
         }
 
-		
-	}
+        
+    }
 }

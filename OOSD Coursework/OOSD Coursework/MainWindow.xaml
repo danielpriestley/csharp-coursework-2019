@@ -27,7 +27,7 @@
 		<TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="22" Margin="635,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="87" BorderBrush="#DDDDDDDD"/>
 		<Label Content="Are you an international student?" HorizontalAlignment="Left" Margin="452,320,0,0" VerticalAlignment="Top" Height="26" Width="181" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11"/>
 		<RadioButton x:Name="interYes" Content="Yes" HorizontalAlignment="Left" Margin="457,351,0,0" VerticalAlignment="Top" Checked="InterYes_Checked" />
-		<RadioButton x:Name="interNo" Content="No" IsChecked="True" HorizontalAlignment="Left" Margin="521,351,0,0" VerticalAlignment="Top" />
+		<RadioButton x:Name="interNo" Content="No" IsChecked="True" HorizontalAlignment="Left" Margin="521,351,0,0" VerticalAlignment="Top"  />
 		<Label x:Name="lblOrigin" Content="Country of Origin?" HorizontalAlignment="Left" Margin="630,320,0,0" VerticalAlignment="Top" Height="26" Width="181" Foreground="#FF444444" FontFamily="Segoe UI Semibold" FontSize="11" Visibility="Collapsed"/>
 		<ComboBox x:Name="listOrigin" HorizontalAlignment="Left" Margin="635,346,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FFF0F0F0" Visibility="Collapsed"/>
 		<ComboBox x:Name="listCourse" HorizontalAlignment="Left" Margin="457,409,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FFF0F0F0">
